@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1508888419 source:d:\documentos\estudos\faculdade - pim\locadorarentcar\struct.c
+
+1508886089 source:d:\documentos\estudos\faculdade - pim\locadorarentcar\menu.c
+
+1508884994 source:d:\documentos\estudos\faculdade - pim\locadorarentcar\adm.c
+
+1509491720 source:d:\documentos\estudos\faculdade - pim\locadorarentcar\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"struct.h"
+
+1508888419 d:\documentos\estudos\faculdade - pim\locadorarentcar\struct.c
+
+1508885945 d:\documentos\estudos\faculdade - pim\locadorarentcar\menu.c
+	<stdio.h>
+
+1508884885 source:d:\documentos\estudos\faculdade - pim\locadorarentcar\loc.c
+
+1508886787 d:\documentos\estudos\faculdade - pim\locadorarentcar\menu.h
+	<stdio.h>
+
+1508890679 d:\documentos\estudos\faculdade - pim\locadorarentcar\adm.h
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"struct.h"
+
+1508888507 d:\documentos\estudos\faculdade - pim\locadorarentcar\struct.h
+
