@@ -197,10 +197,85 @@ void MenuLoc(void)
 
 
         scanf("%d",&op);
-
+        //saida de veiculos
         if (op == 1)
         {
-            //saida de veiculos
+            int tpVeic,CodCli,vlrDia;
+            float vlrBas;
+            char DatSai[10];
+            vlrBas = 80;
+            //0-numero do pedido/protocolo/op<<<<<inserir aqui numero randon
+
+            //1- Data de saida
+            printf("Data da Locação: \n");
+            gets(DatSai);
+
+            //2- Codigo de cliente
+            printf("Código do Cliente: \n");
+            scanf(&CodCli);
+
+            //3- Tipo de Veiculo<<<<<<<<<
+            printf("Tipo de Veículo: \n");
+            printf("1 - Hatch Compacto 1.0 , manual ,  4 portas , Ar+Direção \n");
+            printf("2 - Hatch Compacto 1.6 , manual , 4 portas , Ar+Direção+Central Multimídia \n");
+            printf("3 - Sedã 1.0 , manual , 4 portas , Ar+Direção \n");
+            printf("4 - Sedã 1.6 , automatico , 4 portas , Ar+Direção+Central Multimídia \n");
+            printf("5 - SUV 1.6 , manual , 4 portas , Ar+Direção \n");
+            printf("6 - SUV 1.6 , automatico , 4 portas , Ar+Direção+Central Multimídia \n");
+            printf("7 - Pick-Up 2.0 , manual , 2 portas , Cabine simples , Ar+Direção \n");
+            printf("8 - Pick-Up 2.0 , automatico , 4 portas , Cabine dupla , Ar+Direção+Central Multimídia\n");
+            printf("9 - Van 2.0 , automatico ,3 portas , 12 lugares , Ar+Direção \n");
+            printf("10 - Van 2.0 , automatico , 3 portas , 16 lugares , Ar+Direção \n");
+            scanf(&tpVeic);
+
+
+            //4- Seguro
+            int flgSeg;
+            printf("Seguro: ");
+            printf("1 - Sim    2- Não \n");
+            scanf(&flgSeg);
+
+                if(flgSeg == 1)
+                    {
+                        printf("Tipo de seguro: ")
+                        printf("1 - Seguro Platinum ")
+                        printf("2 - Seguro Diamond")
+                        printf("3 - Seguro Gold ")
+                        scanf(&op);
+
+                        float vlrSeg;
+
+                            if(op == 1)
+                                {
+                                    int flgSN;
+                                    printf("Cobertura de 100% da tabela FIPE, em caso de furto , roubo e colisão \n");
+                                    printf("R$ 50.000,00 de coberturas para terceiro em caso de acidente \n");
+                                    printf("Comfirma ? \n");
+                                    printf("1 - Sim    2- Não ");
+                                    scanf(&flgSN);
+                                    vlrSeg = vlrBas*0.3;
+                                    printf("Valor do Seguro por dia: %d \n",vlrBas);
+                                    vlrBas = vlrBas+vlrSeg;
+                                    printf("Valor da diaria acrescido do desconto: R$ ");
+                                    vlrBas = vlrBas-vlrSeg;
+                                    printf("Confirma ? \n")
+                                    printf("1 - Sim    2- Não \n");
+
+
+                                }
+
+                            if(op == 2 )
+                                {
+
+                                }
+
+                }
+
+
+
+
+
+
         }
 
         if(op == 2)
