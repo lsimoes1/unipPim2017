@@ -4,11 +4,17 @@
 #include "struct.h"
 #include <string.h>
 
+ struct Veiculo Carro[10];
+ struct Cliente Cli[10];
+
+
 int main()
 {
     setlocale(LC_ALL,"Portuguese");
 
-    CriaCarro();
+    CriaCarro(Carro);
+
+    criacliteste(Cli);
 
     int op;
 
@@ -54,7 +60,6 @@ int main()
 
             if(op == 5)
             {
-                printf("Nome do veículo %s", carro2.Modelo);
 
             }
         }
@@ -73,7 +78,7 @@ void MenuAdm(void)
         printf("*              Escolha a Opção Administrativa Desejada           *\n");
         printf("******************** ######################## ********************\n\n");
 
-        printf("1 - Cadastro de usuários");
+        printf("1 - Cadastro de Usuario");
         printf("\n2 - Entrada de veículos");
         printf("\n3 - Manutenção programada");
         printf("\n4 - Cadastro de clientes");
@@ -83,13 +88,7 @@ void MenuAdm(void)
 
         if(op == 1)
         {
-            fflush(stdin);
 
-            struct Usuario usu1;
-
-            printf("Digite o nome\n");
-            gets(usu1.Nomusu);
-            getch();
         }
 
         if(op == 2)
@@ -197,84 +196,112 @@ void MenuLoc(void)
 
 
         scanf("%d",&op);
-        //saida de veiculos
+
         if (op == 1)
         {
-            int tpVeic,CodCli,vlrDia;
+            system("cls");
+
+            int tpVeic, CodCli, VlrDia, OpTipoCarro, OpHatch, OpSedan, OpUtil;
             float vlrBas;
-            char DatSai[10];
+
             vlrBas = 80;
-            //0-numero do pedido/protocolo/op<<<<<inserir aqui numero randon
 
-            //1- Data de saida
-            printf("Data da Locação: \n");
-            gets(DatSai);
+            int Dia, Mes, Ano;
 
-            //2- Codigo de cliente
-            printf("Código do Cliente: \n");
-            scanf(&CodCli);
+            printf("******************** ######################## ********************\n");
+            printf("*                       Saída de Veículos                        *\n");
+            printf("********************        Automóveis        ********************\n");
+            printf("******************** ######################## ********************\n");
+//
+//            printf("Data da locação \n");
+//            scanf("%d",&Dia);
+//            printf("/");
+//            scanf("%d",&Mes);
+//            printf("/");
+//            scanf("%d",&Ano);
 
-            //3- Tipo de Veiculo<<<<<<<<<
-            printf("Tipo de Veículo: \n");
-            printf("1 - Hatch Compacto 1.0 , manual ,  4 portas , Ar+Direção \n");
-            printf("2 - Hatch Compacto 1.6 , manual , 4 portas , Ar+Direção+Central Multimídia \n");
-            printf("3 - Sedã 1.0 , manual , 4 portas , Ar+Direção \n");
-            printf("4 - Sedã 1.6 , automatico , 4 portas , Ar+Direção+Central Multimídia \n");
-            printf("5 - SUV 1.6 , manual , 4 portas , Ar+Direção \n");
-            printf("6 - SUV 1.6 , automatico , 4 portas , Ar+Direção+Central Multimídia \n");
-            printf("7 - Pick-Up 2.0 , manual , 2 portas , Cabine simples , Ar+Direção \n");
-            printf("8 - Pick-Up 2.0 , automatico , 4 portas , Cabine dupla , Ar+Direção+Central Multimídia\n");
-            printf("9 - Van 2.0 , automatico ,3 portas , 12 lugares , Ar+Direção \n");
-            printf("10 - Van 2.0 , automatico , 3 portas , 16 lugares , Ar+Direção \n");
-            scanf(&tpVeic);
+            printf("Código do cliente: \n");
+            scanf("%d", &CodCli);
+            int i;
+            for(i = 0; i < 10; i++)
+            {
+                if(CodCli == Cli[i].CodCli)
+                {
+                    printf("%s\n\n", Cli[i].NomCli);
 
-
-            //4- Seguro
-            int flgSeg;
-            printf("Seguro: ");
-            printf("1 - Sim    2- Não \n");
-            scanf(&flgSeg);
-
-                if(flgSeg == 1)
-                    {
-                        printf("Tipo de seguro: ")
-                        printf("1 - Seguro Platinum ")
-                        printf("2 - Seguro Diamond")
-                        printf("3 - Seguro Gold ")
-                        scanf(&op);
-
-                        float vlrSeg;
-
-                            if(op == 1)
-                                {
-                                    int flgSN;
-                                    printf("Cobertura de 100% da tabela FIPE, em caso de furto , roubo e colisão \n");
-                                    printf("R$ 50.000,00 de coberturas para terceiro em caso de acidente \n");
-                                    printf("Comfirma ? \n");
-                                    printf("1 - Sim    2- Não ");
-                                    scanf(&flgSN);
-                                    vlrSeg = vlrBas*0.3;
-                                    printf("Valor do Seguro por dia: %d \n",vlrBas);
-                                    vlrBas = vlrBas+vlrSeg;
-                                    printf("Valor da diaria acrescido do desconto: R$ ");
-                                    vlrBas = vlrBas-vlrSeg;
-                                    printf("Confirma ? \n")
-                                    printf("1 - Sim    2- Não \n");
-
-
-                                }
-
-                            if(op == 2 )
-                                {
-
-                                }
-
+                    Cli[i].CodCli = 20;
+                    break;
                 }
 
+            }
+
+            int x;
+            for(x = 0; x <= 10; x++)
+            {
+                printf("%d\n\n", Cli[x].CodCli);
+            }
 
 
 
+            printf("1 - Hatch\n");
+            printf("2 - Sedan\n");
+            printf("3 - Utilitário\n");
 
+            scanf("%d", &OpTipoCarro);
+
+            if(OpTipoCarro == 1)
+            {
+                system("cls");
+
+                printf("Opção escolhida: 1\n\n");
+
+                printf("11 - Hatch Básico Econômico\n");
+                printf("12 - Hatch Econômico\n");
+                printf("13 - Hatch Plus\n");
+                printf("14 - Hatch Plus Automático\n");
+
+                scanf("%d", &OpHatch);
+
+
+
+            }
+
+            if(OpTipoCarro == 2)
+            {
+                system("cls");
+
+                printf("Opção escolhida: 2\n\n");
+
+                printf("21 - Sedan Compacto\n");
+                printf("22 - Sedan Compacto Plus\n");
+                printf("23 - Sedan Compacto Plus Automático\n");
+
+                scanf("%d", &OpSedan);
+            }
+
+            if(OpTipoCarro == 3)
+            {
+                system("cls");
+
+                printf("Opção escolhida: 3\n\n");
+
+                printf("21 - SUV Manual\n");
+                printf("22 - SUV Automático\n");
+                printf("23 - Pick-Up Cabine Simples\n");
+                printf("24 - Pick-Up Cabine Dupla\n");
+                printf("25 - Pick-Up Cabine Dupla Automático\n");
+                printf("26 - Van 15 Lugares\n");
+
+                scanf("%d", &OpUtil);
+
+            }
+
+            system("cls");
+
+            printf("******************** ######################## ********************\n");
+            printf("*                       Saída de Veículos                        *\n");
+            printf("********************         Seguro           ********************\n");
+            printf("******************** ######################## ********************\n");
 
         }
 
@@ -290,17 +317,39 @@ void MenuLoc(void)
     }
 }
 
-void CriaCarro(void)
+void CriaCarro(struct Veiculo Carro[10])
 {
-    struct Veiculo carro;
 
-    carro.Ano = 2017;
-    carro.CodVeiculo = 1;
-    strcpy(carro.Modelo, "Toyota");
+    Carro[0].CodVeiculo = 1;
+    Carro[0].ClienteCar = 0;
+    Carro[0].AnoCar = 2017;
+    Carro[0].TipCar = 0;
+    strcpy(Carro[0].NomCar, "Toyota");
 
-    struct Veiculo carro2;
+    Carro[1].CodVeiculo = 2;
+    Carro[1].ClienteCar = 0;
+    Carro[1].AnoCar = 2015;
+    Carro[1].TipCar = 0;
+    strcpy(Carro[1].NomCar, "Davi é baitola");
 
-    carro2.Ano = 2016;
-    carro2.CodVeiculo = 2;
-    strcpy(carro2.Modelo, "Corsa");
+    return Carro;
+
+}
+
+void criacliteste(struct Cliente cli[3])
+{
+    cli[0].CodCli = 10;
+    strcpy(cli[0].NomCli, "Davi Baitola");
+    strcpy(cli[0].CPF, "40684748851");
+
+    cli[1].CodCli = 2;
+    strcpy(cli[1].NomCli, "Kananda");
+    strcpy(cli[1].CPF, "92832");
+
+    cli[2].CodCli = 5;
+    strcpy(cli[2].NomCli, "Robinson Meu Ovo");
+   strcpy(cli[2].CPF, "00001293");
+
+
+
 }
