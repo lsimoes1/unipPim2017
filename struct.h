@@ -5,23 +5,27 @@
 //    short dia;
 //} Data;
 
-struct Usuario
+struct Cliente
 {
-    char Nomusu[30]
-        ,MailUsu[30]
+    char NomCli[30]
         ,CPF[11];
 
 //    Data DataNascimento;
 
-    int CodUso,
+    int CodCli,
         Idade;
 };
 
- struct Veiculo
+struct Veiculo
 {
     int CodVeiculo,
-        Ano;
-    char Modelo [30];
+        ClienteCar,
+        AnoCar,
+        Grupo;
+
+    char Model[20],
+        Marca[20];
+
 
 //    Data DataRetirada
 //        ,DataEntrega;
@@ -32,4 +36,5 @@ struct Usuario
 ////    CodVeiculo[2] = 3; //Corolla
 
 };
+
 
