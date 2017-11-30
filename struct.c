@@ -1,9 +1,3 @@
-//
-//typedef struct {
-//    int ano;
-//    short mes;
-//    short dia;
-//} Data;
 
 struct Cliente
 {

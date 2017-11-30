@@ -5,6 +5,7 @@
 #include <string.h>
 #include <conio.h>
 #include <time.h>
+#include "windows.h"
 
  struct Veiculo Carro[23];
  struct Cliente Cli[100];
@@ -25,7 +26,7 @@ criacliteste(Cli);
 
 Menu();
 
-//MenuTesteData();
+/*MenuTesteData();*/
 
 
 }
@@ -42,7 +43,7 @@ void MenuTesteData()
 
     CalculaData(DataAtual, AlugDias);
 
-    printf("%s", NovaData);
+    printf("\n%s", NovaData);
 }
 
 void CalculaData( char data[100], int dias )
@@ -83,7 +84,7 @@ void Menu(void)
 
     MenuRentCar();
 
-    while(op != 5) //OP == 5 É DE TESTES
+    while(op != 5)
     {
         printf("\n\n******************** ######################## ********************\n");
         printf("*                    Escolha a Opção Desejada                    *\n");
@@ -155,8 +156,8 @@ void MenuAdm(void)
         if(op == 1)
         {
             printf("******************** ## CADASTRO DE USUÁRIO ## ********************\n\n");
-
-            for(int i = 1; i <= 100; i++)
+            int i;
+            for(i = 1; i <= 100; i++)
             {
                 if(Cli[i].CodCli == 0)
                 {
@@ -174,7 +175,7 @@ void MenuAdm(void)
                     printf("CLIENTE CADASTRADO COM SUCESSO!\n");
                     gotoxy(50,11);
                     printf("CÓDIGO CADASTRADO: %d", Cli[i].CodCli);
-                    sleep(3);
+                    Sleep(3000);
                     system("CLS || CLEAR");
 
                     MenuAdm();
@@ -222,12 +223,12 @@ void MenuFin(void)
 
         if(op == 1)
         {
-            //NotaFiscal
+            /*//NotaFiscal*/
         }
 
         if(op == 2)
         {
-            //GerarFatura
+            /*//GerarFatura*/
         }
 
         if(op == 3)
@@ -243,7 +244,7 @@ void MenuFin(void)
         }
         if(op == 4)
         {
-            //Pendências de Pagamento
+            /*//Pendências de Pagamento*/
         }
     }
 }
@@ -303,21 +304,22 @@ void MenuLoc(void)
             printf("*                       Saída de Veículos                        *\n");
             printf("*                           Automóveis                           *\n");
             printf("******************** ######################## ********************\n\n");
-//
+
+/*//
 //            printf("Data da locação \n");
 //            scanf("%d",&Dia);
 //            printf("/");
 //            scanf("%d",&Mes);
 //            printf("/");
 //            scanf("%d",&Ano);
-
+*/
             while(ExistCli == 0)
             {
 
                 printf("Código do cliente: ");
                 scanf("%d", &CodCli);
-
-                for(int i = 1; i < 100; i++)
+                int i;
+                for(i = 1; i < 100; i++)
                 {
                     if(CodCli == Cli[i].CodCli)
                     {
@@ -368,7 +370,7 @@ void MenuLoc(void)
                                             gotoxy(45,10);
                                             printf("Digite uma opção válida!\n\n");
 
-                                            sleep(3);
+                                            Sleep(1000);
 
                                             system("cls || clear");
                                         }
@@ -386,8 +388,8 @@ void MenuLoc(void)
                                     printf("Carro");
                                     gotoxy(x+11,y);
                                     printf("Disponível\n");
-
-                                    for(int i = 0; i <= 23; i++)
+                                    int i;
+                                    for(i = 0; i <= 23; i++)
                                     {
 
                                         if(OpGrupo == Carro[i].Grupo)
@@ -408,7 +410,7 @@ void MenuLoc(void)
                                                 printf("[N]\n");
                                             }
                                             seq++;
-                                            sleep(1);
+                                            Sleep(1000);;
                                         }
 
                                     }
@@ -419,7 +421,7 @@ void MenuLoc(void)
                                     printf("Opção: ");
                                     scanf("%d", &CodVeiculo);
 
-                                    for(int i = 0; i <= 23; i++)
+                                    for(i = 0; i <= 23; i++)
                                     {
                                         if(Carro[i].Grupo == OpGrupo)
                                         {
@@ -427,7 +429,7 @@ void MenuLoc(void)
                                             {
                                                 Carro[i].ClienteCar = CodCli;
 
-    //                                            system("cls || clear");
+    /*//                                            system("cls || clear");
     //
     //                                            gotoxy(45,10);
     //                                            printf("CLIENTE CADASTRADO COM SUCESSO!");
@@ -436,6 +438,7 @@ void MenuLoc(void)
     //
     //
     //                                            Menu();
+*/
 
                                                 CAlugado = 1;
                                             }
@@ -476,7 +479,7 @@ void MenuLoc(void)
                                             gotoxy(45,10);
                                             printf("Digite uma opção válida!\n\n");
 
-                                            sleep(3);
+                                            Sleep(1000);
 
                                             system("cls || clear");
                                         }
@@ -489,7 +492,7 @@ void MenuLoc(void)
                                     gotoxy(x+11,y);
                                     printf("Disponível\n");
 
-                                    for(int i = 0; i <= 23; i++)
+                                    for(i = 0; i <= 23; i++)
                                     {
 
                                         if(OpGrupo == Carro[i].Grupo)
@@ -510,7 +513,7 @@ void MenuLoc(void)
                                                 printf("[N]\n");
                                             }
                                             seq++;
-                                            sleep(1);
+                                            Sleep(1000);;
                                         }
 
                                     }
@@ -521,7 +524,7 @@ void MenuLoc(void)
                                     printf("Opção: ");
                                     scanf("%d", &CodVeiculo);
 
-                                    for(int i = 0; i <= 23; i++)
+                                    for(i = 0; i <= 23; i++)
                                     {
                                         if(Carro[i].Grupo == OpGrupo)
                                         {
@@ -529,7 +532,7 @@ void MenuLoc(void)
                                             {
                                                 Carro[i].ClienteCar = CodCli;
 
-    //                                            system("cls || clear");
+/*    //                                            system("cls || clear");
     //
     //                                            gotoxy(45,10);
     //                                            printf("CLIENTE CADASTRADO COM SUCESSO!");
@@ -538,7 +541,7 @@ void MenuLoc(void)
     //
     //
     //                                            Menu();
-
+*/
                                                 CAlugado = 1;
                                             }
                                         }
@@ -584,7 +587,7 @@ void MenuLoc(void)
                                     gotoxy(x+11,y);
                                     printf("Disponível\n");
 
-                                    for(int i = 0; i <= 23; i++)
+                                    for(i = 0; i <= 23; i++)
                                     {
 
                                         if(OpGrupo == Carro[i].Grupo)
@@ -605,7 +608,7 @@ void MenuLoc(void)
                                                 printf("[N]\n");
                                             }
                                             seq++;
-                                            sleep(1);
+                                            Sleep(1000);
                                         }
 
                                     }
@@ -616,7 +619,7 @@ void MenuLoc(void)
                                     printf("Opção: ");
                                     scanf("%d", &CodVeiculo);
 
-                                    for(int i = 0; i <= 23; i++)
+                                    for(i = 0; i <= 23; i++)
                                     {
                                         if(Carro[i].Grupo == OpGrupo)
                                         {
@@ -624,7 +627,7 @@ void MenuLoc(void)
                                             {
                                                 Carro[i].ClienteCar = CodCli;
 
-    //                                            system("cls || clear");
+/*    //                                            system("cls || clear");
     //
     //                                            gotoxy(45,10);
     //                                            printf("CLIENTE CADASTRADO COM SUCESSO!");
@@ -633,7 +636,7 @@ void MenuLoc(void)
     //
     //
     //                                            Menu();
-
+*/
                                                 CAlugado = 1;
                                             }
                                         }
@@ -648,7 +651,7 @@ void MenuLoc(void)
                                     gotoxy(45,10);
                                     printf("Digite uma opção válida!\n\n");
 
-                                    sleep(3);
+                                    Sleep(30000);
 
                                     system("cls || clear");
                                     break;
@@ -698,7 +701,7 @@ void MenuLoc(void)
                                 switch(TpSeg)
                                 {
                                     case 1:
-                                        for(int i = 0;i <= 23; i++)
+                                        for(i = 0;i <= 23; i++)
                                         {
                                             if(Carro[i].Grupo == OpGrupo)
                                             {
@@ -715,7 +718,7 @@ void MenuLoc(void)
                                                     printf(" - Seguro Gold");
                                                     gotoxy(50,12);
                                                     printf("OBRIGADO PELA PREFERÊNCIA!");
-                                                    sleep(3);
+                                                    Sleep(30000);
                                                     system("CLS || CLEAR");
 
                                                     Menu();
@@ -726,7 +729,7 @@ void MenuLoc(void)
                                         break;
 
                                     case 2:
-                                         for(int i = 0;i <= 23; i++)
+                                         for(i = 0;i <= 23; i++)
                                         {
                                             if(Carro[i].Grupo == OpGrupo)
                                             {
@@ -743,7 +746,7 @@ void MenuLoc(void)
                                                     printf(" - Seguro Diamond");
                                                     gotoxy(50,12);
                                                     printf("OBRIGADO PELA PREFERÊNCIA!");
-                                                    sleep(3);
+                                                    Sleep(30000);
                                                     system("CLS || CLEAR");
 
                                                     Menu();
@@ -754,7 +757,7 @@ void MenuLoc(void)
                                         break;
 
                                     case 3:
-                                         for(int i = 0;i <= 23; i++)
+                                         for(i = 0;i <= 23; i++)
                                         {
                                             if(Carro[i].Grupo == OpGrupo)
                                             {
@@ -771,7 +774,7 @@ void MenuLoc(void)
                                                     printf(" - Seguro Platinum");
                                                     gotoxy(50,12);
                                                     printf("OBRIGADO PELA PREFERÊNCIA!");
-                                                    sleep(3);
+                                                    Sleep(30000);
                                                     system("CLS || CLEAR");
 
                                                     Menu();
@@ -808,12 +811,12 @@ void MenuLoc(void)
 
         if(op == 2)
         {
-            //relatorio de veiculos
+           /* //relatorio de veiculos*/
         }
 
         if(op == 3)
         {
-        //relatorio de locações
+            /*//relatorio de locações*/
         }
     }
 }
@@ -821,7 +824,7 @@ void MenuLoc(void)
 void CriaCarro(struct Veiculo Carro[23])
 {
 
-//    VEÍCULOS DO GRUPO 11
+/*//    VEÍCULOS DO GRUPO 11*/
 
     Carro[0].CodVeiculo = 1;
     Carro[0].ClienteCar = 0;
@@ -837,7 +840,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[1].Model, "Kwid");
     strcpy(Carro[1].Marca, "Renault");
 
-//    VEÍCULOS DO GRUPO 12
+/*//    VEÍCULOS DO GRUPO 12*/
 
     Carro[2].CodVeiculo = 1;
     Carro[2].ClienteCar = 0;
@@ -860,7 +863,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[4].Model, "Sandero");
     strcpy(Carro[4].Marca, "Renault");
 
-//    VEÍCULOS DO GRUPO 13
+/*//    VEÍCULOS DO GRUPO 13*/
 
     Carro[5].CodVeiculo = 1;
     Carro[5].ClienteCar = 0;
@@ -876,7 +879,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[6].Model, "Punto");
     strcpy(Carro[6].Marca, "Fiat");
 
-//    VEÍCULOS DO GRUPO 14
+/*/    VEÍCULOS DO GRUPO 14*/
 
     Carro[7].CodVeiculo = 1;
     Carro[7].ClienteCar = 0;
@@ -885,7 +888,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[7].Model, "Fiesta");
     strcpy(Carro[7].Marca, "Ford");
 
-//    VEÍCULOS DO GRUPO 21
+/*//    VEÍCULOS DO GRUPO 21*/
 
     Carro[8].CodVeiculo = 1;
     Carro[8].ClienteCar = 0;
@@ -894,7 +897,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[8].Model, "Ka+");
     strcpy(Carro[8].Marca, "Ford");
 
-//    VEÍCULOS DO GRUPO 22
+/*//    VEÍCULOS DO GRUPO 22*/
 
     Carro[9].CodVeiculo = 1;
     Carro[9].ClienteCar = 0;
@@ -911,7 +914,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[10].Marca, "Chevrolet");
 
 
-//    VEÍCULOS DO GRUPO 23
+/*//    VEÍCULOS DO GRUPO 23*/
 
     Carro[11].CodVeiculo = 1;
     Carro[11].ClienteCar = 0;
@@ -927,7 +930,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[12].Model, "Prisma");
     strcpy(Carro[12].Marca, "Chevrolet");
 
-//    VEÍCULOS DO GRUPO 31
+/*//    VEÍCULOS DO GRUPO 31*/
 
     Carro[13].CodVeiculo = 1;
     Carro[13].ClienteCar = 0;
@@ -943,7 +946,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[14].Model, "Renagade");
     strcpy(Carro[14].Marca, "Jeep");
 
-//    VEÍCULOS DO GRUPO 32
+/*//    VEÍCULOS DO GRUPO 32*/
 
     Carro[15].CodVeiculo = 1;
     Carro[15].ClienteCar = 0;
@@ -959,7 +962,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[16].Model, "Renagade");
     strcpy(Carro[16].Marca, "Jeep");
 
-//    VEÍCULOS DO GRUPO 33
+/*//    VEÍCULOS DO GRUPO 33*/
 
     Carro[17].CodVeiculo = 1;
     Carro[17].ClienteCar = 0;
@@ -975,7 +978,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[18].Model, "Strada");
     strcpy(Carro[18].Marca, "Fiat");
 
-//    VEÍCULOS DO GRUPO 34
+/*//    VEÍCULOS DO GRUPO 34*/
 
     Carro[19].CodVeiculo = 1;
     Carro[19].ClienteCar = 0;
@@ -984,7 +987,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[19].Model, "Oroch");
     strcpy(Carro[19].Marca, "Renault");
 
-//    VEÍCULOS DO GRUPO 35
+/*//    VEÍCULOS DO GRUPO 35*/
 
     Carro[20].CodVeiculo = 1;
     Carro[20].ClienteCar = 0;
@@ -1000,7 +1003,7 @@ void CriaCarro(struct Veiculo Carro[23])
     strcpy(Carro[21].Model, "Oroch");
     strcpy(Carro[21].Marca, "Renault");
 
-//    VEÍCULOS DO GRUPO 36
+/*//    VEÍCULOS DO GRUPO 36*/
 
     Carro[22].CodVeiculo = 1;
     Carro[22].ClienteCar = 0;
@@ -1062,8 +1065,8 @@ void MenuRentCar()
     printf("#");
     printf("\n##################################################################");
 
-//    gotoxy(45,3);
-//    printf("*");
+/*//    gotoxy(45,3);*/
+/*//    printf("*");*/
 }
 
 void DadosUsuario(int p, int i, int c, int g)
@@ -1089,7 +1092,7 @@ void DadosUsuario(int p, int i, int c, int g)
 
     if(i == 1)
     {
-        printf("*");
+
         gotoxy(44,5);
         printf("*");
         gotoxy(1,5);
@@ -1100,7 +1103,7 @@ void DadosUsuario(int p, int i, int c, int g)
 
     if(i == 2)
     {
-        printf("*");
+
         gotoxy(44,5);
         printf("*");
         gotoxy(1,5);
@@ -1111,7 +1114,7 @@ void DadosUsuario(int p, int i, int c, int g)
 
     if(i == 3)
     {
-        printf("*");
+
         gotoxy(44,5);
         printf("*");
         gotoxy(1,5);
@@ -1122,13 +1125,13 @@ void DadosUsuario(int p, int i, int c, int g)
 
     if(c > 0)
     {
-        printf("*");
+
         gotoxy(44,6);
         printf("*");
         gotoxy(1,6);
         printf("*");
-
-        for(int i = 0; i <= 23; i++)
+        int i;
+        for(i = 0; i <= 23; i++)
         {
             if(g == Carro[i].Grupo)
             {
