@@ -1,35 +1,42 @@
-//
-//typedef struct {
-//    int ano;
-//    short mes;
-//    short dia;
-//} Data;
-
-struct Usuario
+struct Financeiro
 {
-    char Nomusu[30]
-        ,MailUsu[30]
+    char NomeCli[30], DataAlugado[50];
+
+    int CodCliente;
+
+    float VlrPago;
+};
+
+struct Cliente
+{
+    char NomCli[30]
         ,CPF[11];
 
-//    Data DataNascimento;
 
-    int CodUso,
-        Idade;
+    int CodCli,
+        Idade,
+        Idoso,
+        Ong,
+        Pg;
 };
 
- struct Veiculo
+struct Veiculo
 {
     int CodVeiculo,
-        Ano;
-    char Modelo [30];
+        ClienteCar,
+        AnoCar,
+        Grupo,
+        Seg;
 
-//    Data DataRetirada
-//        ,DataEntrega;
+    float VlrBase
+        ,VlrSeg
+        ,VlrDesc
+        ,VlrTotal;
 
-
-//      CodVeiculo[0] = 1; //Astra
-////    CodVeiculo[1] = 2; //Corsa
-////    CodVeiculo[2] = 3; //Corolla
-
+    char Model[20],
+        Marca[20],
+        DataAlugado[30],
+        DataPrev[30];
 };
+
 
